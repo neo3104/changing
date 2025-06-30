@@ -491,9 +491,17 @@ const App: React.FC = () => {
     };
     window.addEventListener('dragover', prevent, false);
     window.addEventListener('drop', prevent, false);
+    document.addEventListener('dragover', prevent, false);
+    document.addEventListener('drop', prevent, false);
+    document.body.addEventListener('dragover', prevent, false);
+    document.body.addEventListener('drop', prevent, false);
     return () => {
       window.removeEventListener('dragover', prevent, false);
       window.removeEventListener('drop', prevent, false);
+      document.removeEventListener('dragover', prevent, false);
+      document.removeEventListener('drop', prevent, false);
+      document.body.removeEventListener('dragover', prevent, false);
+      document.body.removeEventListener('drop', prevent, false);
     };
   }, []);
 
