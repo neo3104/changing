@@ -485,12 +485,15 @@ const App: React.FC = () => {
 
   // グローバルでドラッグ＆ドロップのデフォルト挙動を抑制
   useEffect(() => {
-    const prevent = (e: DragEvent) => { e.preventDefault(); };
-    window.addEventListener('dragover', prevent);
-    window.addEventListener('drop', prevent);
+    const prevent = (e: DragEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    window.addEventListener('dragover', prevent, false);
+    window.addEventListener('drop', prevent, false);
     return () => {
-      window.removeEventListener('dragover', prevent);
-      window.removeEventListener('drop', prevent);
+      window.removeEventListener('dragover', prevent, false);
+      window.removeEventListener('drop', prevent, false);
     };
   }, []);
 
