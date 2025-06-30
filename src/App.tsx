@@ -518,7 +518,7 @@ const App: React.FC = () => {
         letterSpacing: 2,
         zIndex: 2000
       }}>
-        修正済み（グローバルドラッグ＆ドロップ抑制テスト用）
+        修正済み2（グローバルドラッグ＆ドロップ抑制テスト用）
       </div>
       <div className="app-main-row">
         {/* 左カラム：PDF抽出機能 */}
